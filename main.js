@@ -54,8 +54,8 @@ function main() {
   function createGridElements(gridSize) {
     for (let i = 0; i < gridSize * gridSize; i++) {
       const gridElement = document.createElement("div");
-      gridElement.style.minHeight = `${(1 / gridSize) * 100}%`;
       gridElement.style.width = `${(1 / gridSize) * 100}%`;
+
       gridElement.addEventListener("click", (event) => {
         if (toolName === "eraser") {
           event.target.style.backgroundColor = "#ffffff";

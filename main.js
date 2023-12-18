@@ -40,25 +40,31 @@ function main() {
 
   gridSizeSelector.addEventListener("change", (event) => {
     gridSize = event.target.value;
+    gridContainer.innerHTML = "";
     createGridElements(gridSize);
   });
 
   function clearGrid() {
     gridContainer.childNodes.forEach((node) => {
       node.style.backgroundColor = "#ffffff";
+      node.classList.remove("painted");
     });
   }
 
   function createGridElements(gridSize) {
     for (let i = 0; i < gridSize * gridSize; i++) {
       const gridElement = document.createElement("div");
+      gridElement.style.minHeight = `${(1 / gridSize) * 100}%`;
+      gridElement.style.width = `${(1 / gridSize) * 100}%`;
       gridElement.addEventListener("click", (event) => {
         if (toolName === "eraser") {
           event.target.style.backgroundColor = "#ffffff";
+          event.target.classList.remove("painted");
         }
 
         if (toolName === "pencil" && event.target.backgroundColor !== color) {
           event.target.style.backgroundColor = color;
+          event.target.classList.add("painted");
         }
       });
 

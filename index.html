@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch a Sketch</title>
+    <script src="./main.js" defer></script>
   </head>
   <body>
     <div id="main-container">
       <div class="right-menu">
-        <input type="color" class="tool-button" />
-        <button class="tool-button"></button>
-        <button class="tool-button"></button>
+        <input type="color" class="tool-button" id="color-selector" />
+        <button class="tool-button" id="pencil">pencil</button>
+        <button class="tool-button" id="eraser">eraser</button>
       </div>
       <div class="sketch-grid"></div>
       <div class="left-menu">
@@ -27,7 +28,7 @@
               <option value="128">128x128</option>
             </select>
           </div>
-          <button class="clear-button">Clear</button>
+          <button class="clear-grid-button">Clear</button>
         </div>
         <div class="bottom-section">
           <p>
